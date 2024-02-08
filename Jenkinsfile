@@ -1,4 +1,5 @@
 node {
+    properties([pipelineTriggers([pollSCM('* * * * *')])])
     stage('Checkout') {
         git branch: 'main', url: 'https://github.com/isav48/jgsu-spring-petclinic.git'
     }
